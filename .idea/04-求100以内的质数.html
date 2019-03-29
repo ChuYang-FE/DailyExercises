@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-求100以内的质数</title>
+</head>
+<body>
+<script>
+    var i, j, prime, arr = [];
+    for (i = 1; i <= 100; i++) {
+        prime = true;//开始默认是质数
+        for (j = 1; j <= i; j++) {
+            if (j != 1 && j != i && i % j == 0) {
+                prime = false;//不是偶数
+                break;
+            }
+        }
+        if (prime) {
+            arr.push(i);
+        }
+    }
+    console.log(arr);
+
+</script>
+</body>
+</html>
