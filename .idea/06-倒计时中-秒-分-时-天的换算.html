@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06-倒计时中-秒-分-时-天的换算</title>
+    <style>
+        #timeCount{
+            width:300px;
+            height:150px;
+            margin:50px auto;
+            border:1px solid red;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+<div id="timeCount">
+    距离毕业还有：
+    <br/>
+    <span class="day"></span>天 <br>
+    <span class="hour"></span>小时 <br>
+    <span class="min"></span>分 <br>
+    <span class="sec"></span>秒 <br>
+</div>
+<script>
+    var allTime = document.getElementsByTagName("span");
+    var day = allTime[0];
+    var hour = allTime[1];
+    var min = allTime[2];
+    var sec = allTime[3];
+
+    setInterval(function(){
+            let oneday = new Date(2020,6,1);
+            let today = new Date();
+            let secAll = (oneday-today)/1000;
+
+
+            let dayLast = secAll/(3600*24); //天
+            let hourLast = secAll%(3600*24)/3600; //小时
+            let minLast = secAll%(3600*24)%3600/60; //分钟
+            let secLast = secAll%(3600*24)%3600%60/1;  //秒
+
+            day.innerText = parseInt(dayLast);
+            hour.innerText = parseInt(hourLast);
+            min.innerText = parseInt(minLast);
+            sec.innerText = parseInt(secLast);
+    },300)
+
+
+</script>
+</body>
+</html>
