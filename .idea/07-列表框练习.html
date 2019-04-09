@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07-列表框练习</title>
+    <style>
+        select{
+            width: 100px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<span>待选名单</span>
+<select name="select" id="select1" multiple size="4">
+    <option value="张三">张三</option>
+    <option value="李四">李四</option>
+    <option value="王五">王五</option>
+    <option value="陈六">陈六</option>
+</select>
+<button class="btn"> >> </button>
+<span>参加名单</span>
+<select name="select" id="select2" multiple size="4">
+</select>
+<script>
+    let btn = document.getElementsByClassName("btn")[0];
+    btn.onclick = function (){
+        let select1 = document.getElementById("select1");
+        let select2 = document.getElementById("select2");
+        let currentIndex = select1.selectedIndex;
+        let currentOption =select1.options[currentIndex]
+        currentOption.remove();
+
+        let newOpt = document.createElement("option");
+        let txtNode = document.createTextNode(currentOption.value);
+        newOpt.appendChild(txtNode);
+        select2.appendChild(newOpt);
+
+    };
+</script>
+</body>
+</html>
