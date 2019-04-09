@@ -6,7 +6,7 @@
     <style>
         #timeCount{
             width:300px;
-            height:150px;
+            height:200px;
             margin:50px auto;
             border:1px solid red;
             text-align:center;
@@ -16,12 +16,11 @@
 </head>
 <body>
 <div id="timeCount">
-    距离毕业还有：
-    <br/>
-    <span class="day timeFont"></span>天 <br>
-    <span class="hour timeFont"></span>小时 <br>
-    <span class="min timeFont"></span>分 <br>
-    <span class="sec timeFont"></span>秒 <br>
+    <p>距离毕业还有：</p>
+    <span class="day"></span>天 <br>
+    <span class="hour"></span>小时 <br>
+    <span class="min"></span>分 <br>
+    <span class="sec"></span>秒 <br>
 </div>
 <script>
     var allTime = document.getElementsByTagName("span");
@@ -45,7 +44,11 @@
             hour.innerText = parseInt(hourLast);
             min.innerText = parseInt(minLast);
             sec.innerText = parseInt(secLast);
-    },300)
+    },300);
+    var box = document.getElementById("timeCount");
+    box.onclick = function (){
+        box.style.backgroundColor = "yellow";
+    }
 
 
 </script>
