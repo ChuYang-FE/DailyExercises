@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07-表单验证</title>
+</head>
+<body>
+<form action="http://baidu.com" id="form">
+    <h1>用户注册</h1>
+    <span>用户名</span> <input type="text" placeholder="以字母开头，6-20个字符"><br><br>
+    <span>用户密码</span> <input type="text" placeholder="异于用户名，6-20个字符"><br><br>
+    <span>重复输入密码</span> <input type="text" placeholder="异于用户名，6-20个字符"><br><br>
+    <span>有效邮箱地址</span> <input type="email" placeholder="以@xxx.com结尾"><br><br>
+    <input type="submit" value="提交">
+    <input type="button" value="取消">
+</form>
+<script>
+    let inputs = document.getElementsByTagName("input");
+    let name = inputs[0];
+    let psd = inputs[1];
+    let psdConfirm = inputs[2];
+    let mail = inputs[3];
+    let submit = inputs[4];
+    submit.onclick = function () {
+        if (/^[0-9]$/.test(name.value.charAt(0))) {
+            alert("用户名不能以数字开头");
+            return false;
+        } else if (!/^[A-Za-z]$/.test(name.value.charAt(0))) {
+            alert("用户名只能以字母开头");
+            return false;
+        } else if (name.value.length < 6 || name.value.length > 20) {
+            alert("用户名长度不符合，应为6-20个字符");
+            return false;
+        } else if (psd.value.length < 6 || psd.value.length > 20) {
+            alert("密码长度不符合，应为6-20个字符");
+            return false;
+        } else if (psd.value == name.value) {
+            alert("密码不能和用户名一样");
+            return false;
+        } else if (psd.value != psdConfirm.value) {
+            alert("重复密码不一致");
+            return false;
+        } else if (!/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/.test(mail.value)) {
+            alert("请输入正确邮箱格式，例如xx@qq.com");
+            return false;
+        }
+    }
+</script>
+</body>
+</html>
