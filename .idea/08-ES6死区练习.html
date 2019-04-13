@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08-ES6死区练习</title>
+</head>
+<body>
+<script>
+    //1.常见死区:Uncaught ReferenceError: temp is not defined
+    // if(true){
+    //     console.log(temp);
+    //     let temp;
+    // }
+    //2.比较隐蔽的死区,y=x时，x还未声明，属于死区。
+    function f(y=x,x=1) {
+        return [x,y];
+    }
+    f();
+</script>
+<script>
+
+</script>
+</body>
+</html>
