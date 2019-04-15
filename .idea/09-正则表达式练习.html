@@ -7,11 +7,13 @@
 <body>
 <script>
     //元字符
-    let reg1 = /./;
-    let reg2 = /Young|Allen|TCY/;
+    let reg1 = /./;//1.全部字符
+    let reg2 = /Young|Allen|TCY/;//2.或
     let name ="Call me Young or Allen or TCY !";
     console.log(reg1.test(name));//true
     console.log(reg2.test(name));//true
+
+    
 
 
 </script>
