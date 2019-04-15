@@ -7,15 +7,22 @@
 <body>
 <script>
     //元字符
-    let reg1 = /./;//1.全部字符
-    let reg2 = /Young|Allen|TCY/;//2.或
-    let name ="Call me Young or Allen or TCY !";
+    let reg1 = /./;//全部字符
+    let reg2 = /Young|Allen|TCY/;//或
+    let name ="Call me Young or Allen or TCY ! 叫我谭三！1aA";
     console.log(reg1.test(name));//true
     console.log(reg2.test(name));//true
 
-    
 
+    //元字表
+    //[]中括号里任意一个
+    let reg3 = /[张王李谭]三/;
+    let reg4 = /[^张王李谭]三/;//^代表不能有[]里的任意一个
+    console.log(reg3.test(name));//true
+    console.log(reg4.test(name));//false
 
+    let reg5 = /[0-9][a-z][A-Z]/;
+    console.log(reg5.test(name));//true ,因为有1aA。
 </script>
 </body>
 </html>
