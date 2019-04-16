@@ -23,6 +23,22 @@
 
     let reg5 = /[0-9][a-z][A-Z]/;
     console.log(reg5.test(name));//true ,因为有1aA。
+
+    //量词
+    // 1.* 任意数量
+    // 2.? 0或1
+    // 3.+ 至少1
+    // 4.{n} 重复n次
+    // 5.{1,} 重复1次及以上
+    // 6.{n,m} 重复n到m次
+    let reg6 = /a\d*/;
+    console.log(reg6.test("a22a"));//true
+    let reg7 = /a\d?/;
+    console.log(reg7.test("a22a"));//true
+    let reg8 = /b\d+/;
+    console.log(reg8.test("a22b"));//false
+    let reg9 = /a{2,}/;
+    console.log(reg9.test("aa22bb"));//true
 </script>
 </body>
 </html>
