@@ -25,9 +25,9 @@
     console.log(reg5.test(name));//true ,因为有1aA。
 
     //量词
-    // 1.* 任意数量
-    // 2.? 0或1
-    // 3.+ 至少1
+    // 1.* 重复任意次
+    // 2.? 重复0或1次
+    // 3.+ 重复至少1次
     // 4.{n} 重复n次
     // 5.{1,} 重复1次及以上
     // 6.{n,m} 重复n到m次
@@ -39,6 +39,17 @@
     console.log(reg8.test("a22b"));//false
     let reg9 = /a{2,}/;
     console.log(reg9.test("aa22bb"));//true
+
+    //exec,贪婪，禁止贪婪
+    let reg10 = /A\d{2,4}/;//默认贪婪
+    var result10 = reg10.exec("A123456")
+    console.log(result10);
+    console.log(result10[0]);//A1234
+
+    let reg11 = /A\d{2,4}?/; //?表示禁止贪婪
+    var result11 = reg11.exec("A123456")
+    console.log(result11);
+    console.log(result11[0]);//A12
 </script>
 </body>
 </html>
