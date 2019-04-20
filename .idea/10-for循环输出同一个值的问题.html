@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-for循环输出同一个值的问题</title>
+    <style>
+        li{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            list-style: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<ul id="box">
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<script>
+    var box = document.getElementById("box");
+    var lis = box.children;
+    //目的：点击对应盒子，弹出对应数字
+
+    //问题：失败，均输出5
+    // for(var i=0;i<lis.length;i++){
+    //     lis[i].onclick = function (){
+    //         console.log(i);
+    //     }
+    // }
+
+    //解决办法
+    //1.使用let
+    // for(let i=0;i<lis.length;i++){
+    //     lis[i].onclick = function (){
+    //         console.log(i);
+    //     }
+    // }
+
+    //2.加一层闭包,i以函数参数形式传递给内层函数
+    for(var i=0;i<lis.length;i++){
+        (function (index){
+            lis[i].onclick = function (){
+                console.log(index);
+        }
+            })(i);
+
+    }
+</script>
+</body>
+</html>
