@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15-entries(),values(),keys()</title>
+</head>
+<body>
+<script>
+    //均返回一个遍历器对象：Array Iterator {}
+    console.log([666,3,5].keys());
+    console.log([666,3,5].values());
+    console.log([666,3,5].entries());
+
+    //1.键名
+    for(let index of [666,3,5].keys()){
+        console.log(index);//0,1,2
+    }
+
+    //2.键值
+    for(let ele of [666,3,5].values()){
+        console.log(ele);//666,3,5
+    }
+
+    //3.键值对
+    for(let [index,ele] of [666,3,5].entries()){
+        console.log(index,ele);//0 666, 1 3, 2 5
+    }
+</script>
+</body>
+</html>
