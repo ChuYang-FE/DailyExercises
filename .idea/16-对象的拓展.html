@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16-对象的拓展</title>
+</head>
+<body>
+<script>
+    //Object.is():弥补了==和===的不足。
+    //==会自动转换数据类型，===的问题是:NaN不等于NaN，和+0等于-0
+    let b = Object.is(+0,-0);//false
+    let c = Object.is(NaN,NaN)//true~
+    console.log(b,c);
+</script>
+</body>
+</html>
