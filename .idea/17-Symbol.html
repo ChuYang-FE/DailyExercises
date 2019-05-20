@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17-Symbol</title>
+</head>
+<body>
+<script>
+    let obj={
+        [Symbol('my_key')]:1,
+        enum:2,
+        nonEnum:3
+    };
+    //使用Reflect.ownKeys方法返回所有类型的键名，包括常规键名和Symbol键名
+    console.log(Reflect.ownKeys(obj));
+    //(3) ["enum", "nonEnum", Symbol(my_key)]
+    // 0: "enum"
+    // 1: "nonEnum"
+    // 2: Symbol(my_key)
+    // length: 3
+    // __proto__: Array(0)
+</script>
+</body>
+</html>
