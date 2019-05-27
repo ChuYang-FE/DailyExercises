@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19-算法题，将数组的0放在最后</title>
+</head>
+<body>
+<script>
+    let a = [0,0,1,22,0,0,5];
+    console.log(zeroMove(a));
+
+    function zeroMove(array) {
+        let len = array.length;
+        let j = 0;
+        for(let i=0;i<len-j;i++){
+            if(array[i]===0){
+                array.push(0);
+                array.splice(i,1);
+                i --;
+                j ++;
+            }
+        }
+        return array;
+    }
+</script>
+</body>
+</html>
