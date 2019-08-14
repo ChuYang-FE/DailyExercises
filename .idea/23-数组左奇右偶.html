@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>23-数组左奇右偶</title>
+</head>
+<body>
+    <script>
+        //自己的方法~有更优的方法可以告诉我~
+        //实现给定一个数组，将奇数放在数组的左边，偶数放在数组的右边。
+        function arrDivide(arr) {
+            let odd = [];
+            let even = [];
+            function up(a,b){ //从小到大~
+                return a-b;
+            }
+            arr.map(n => n%2 === 0 ? even.push(n) : odd.push(n));
+            odd.sort(up);
+            even.sort(up);
+            console.log(odd.concat(even));
+        }
+        arrDivide([1,2,3,4,22,31,3213,11,88,100]);
+    </script>
+</body>
+</html>
