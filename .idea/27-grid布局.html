@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>27-grid布局</title>
+    <style>
+        #box {
+            width: 500px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 0 auto;
+            display: grid;
+
+            /* 两行三列，行高分别为80px,120px。每列宽为150px,auto,150px*/
+            grid-template: 70px 120px/100px auto 100px; 
+            /* 行间距10px，列间距20px */
+            grid-gap: 10px 20px;
+        }
+        #box>div {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+    </div>
+</body>
+</html>
